@@ -1,0 +1,50 @@
+// POST /api/getcountryvalue
+IN:
+[
+    {
+        "name": String,
+        "params": [Number]
+    }
+]
+
+OUT:
+{
+    "map": 
+    {
+        "id": Number,
+        ...
+    },
+    "country":
+    {
+        "id": [Number],
+        ...
+    }
+}
+
+// POST /api/valuebyyears
+IN:
+[
+    {
+        "name": String,
+        "params": [Number]
+    }
+]
+
+OUT:
+{
+    "value": 
+    {
+        "id": [Number],
+        ...
+    },
+    "growth":
+    {
+        "id": [Number],
+        ...
+    },
+    "balance":
+    {
+        "id": [Number],
+        ...
+    }
+}

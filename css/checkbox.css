@@ -1,0 +1,103 @@
+* 
+  body, ul {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+  }
+  input[type="text"] {
+    display: none;
+  }
+  .dropdown {
+    position: relative;
+    display: table;
+    margin: 10px auto;
+    color: #333;
+    width: 220px;
+    max-width: 220px;
+  }
+  .dropdown a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    background: #333;
+    padding: 12px 20px 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-size: .95em;
+    text-align: center;
+  }
+  .dropdown ul {
+    position: relative;
+    list-style: none;
+    background: #eee;
+    margin-top: 10px;
+    padding: 5px 0;
+    border-radius: 10px;
+    font-size: .9em;
+    overflow:hidden;
+    overflow-y:scroll;
+    max-height: 300px;
+    max-width: 220px;
+  }
+  .dropdown ul:before {
+    content: '';
+    position: absolute;
+    right: 20px;
+    bottom: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 7px 6px 7px;
+    border-color: transparent transparent #eeeeee transparent;
+  }
+  .dropdown ul li {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .dropdown ul li:last-child {
+    border: none;
+  }
+  .dropdown input[type="checkbox"] {
+    display: none;
+  }
+  .dropdown label {
+    display: block;
+    position: relative;
+    padding-left: 22px;
+    cursor: pointer;
+  }
+  .dropdown label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #666;
+    border-radius: 4px;
+  }
+  .dropdown input[type="checkbox"]:checked ~ label:before {
+    background: #666;
+  }
+  .dropdown label:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 5px;
+    height: 12px;
+    top: -5px;
+    left: 6px;
+    border: 2px solid #fff;
+    box-shadow: 1px 2px 2px #555;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .dropdown input[type="checkbox"]:checked ~ label:after {
+    opacity: 1;
+    visibility: visible;
+  }

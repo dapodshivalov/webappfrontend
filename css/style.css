@@ -1,0 +1,111 @@
+/*********************
+General
+*********************/
+body {
+  margin: 0;
+  font-family: 'Hind', sans-serif;
+  display: flex;
+  flex-direction: column; }
+  @media (min-width: 960px) {
+    body {
+      flex-direction: row; } }
+
+.mysidebar {
+  padding-top: 25px;
+  order: 0;
+  background: #FBFDFD;
+  border: 1px solid #E8F3F2;
+  flex: 0 1 100%;
+  align-items: center; }
+  @media (min-width: 500px) {
+    .mysidebar {
+      flex: 0 1 300px;
+      flex-direction: row; } }
+  .mysidebar .multiselect-native-select {
+    background: #f3edf8;
+    border: 1px solid #e8cfee;
+    border-radius: 3px; }
+  .mysidebar .applyButtonDiv {
+    width: 200px; }
+  .mysidebar .filter-header {
+    font-size: 18pt;
+    height: 50px; }
+
+.mycontainer {
+  background: #fff;
+  order: 1;
+  flex: 0 1 100%;
+  min-height: 100vh;
+  padding: 20px;
+  flex-direction: row; }
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px; }
+
+.myposts {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center; }
+  .myposts .myheader {
+    background: #FDFCFC;
+    border: 1px solid #EAE4E2;
+    border-radius: 3px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: calc(100% - 20px);
+    height: 50px; }
+    .myposts .myheader .yearsSlider {
+      width: 300px; }
+  .myposts .mypost {
+    background: #FCFCFE;
+    border: 1px solid #DFE2F2;
+    border-radius: 3px;
+    margin: 10px;
+    height: 350px;
+    width: calc(100% - 20px);
+    display: flex;
+    flex-flow: column wrap; }
+    .myposts .mypost .myptitle {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: flex-start;
+      height: 40px;
+      width: 100%;
+      padding-top: 5px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 18pt; }
+      .myposts .mypost .myptitle .count {
+        margin-left: 10px;
+        height: 20px;
+        width: 50px; }
+        .myposts .mypost .myptitle .count #countFilter {
+          display: inline;
+          height: 30px;
+          width: 70px; }
+    .myposts .mypost .mypplot {
+      height: 305px;
+      width: 100%; }
+    .myposts .mypost .myspinner {
+      width: 100%;
+      height: 300px; }
+  .myposts .myfeature {
+    width: calc( ( ( 100% / 3 ) * 2) - 20px ); }
+  .myposts .mybig-post {
+    width: calc( ( 50%) - 20px ); }
+
+@media (max-width: 900px) {
+  .myposts .mybig-post {
+    width: 100%; } }
+@media (max-width: 600px) {
+  .myposts .mypost {
+    width: 100%; } }
+
+/*# sourceMappingURL=style.css.map */

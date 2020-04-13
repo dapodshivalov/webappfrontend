@@ -1,0 +1,87 @@
+// GET /api/countryfilter
+{
+    "continents": [
+        {
+            "id": Number,
+            "value": String
+        }
+    ],
+    "regions": [
+        {
+            "id": Number,
+            "value": String
+        }
+    ],
+    "countries": [
+        {
+            "id": Number,
+            "value": String
+        }
+    ],
+    "relations": [
+        {
+            "idContinent": Number,
+            "idRegion": Number,
+            "idCountry": Number,
+        }
+    ]
+}
+
+// GET /api/itemfilter
+{
+    "sections": [
+        {
+            "id": Number,
+            "value": String
+        }
+    ],
+    "chapters": [
+        {
+            "id": Number,
+            "value": String
+        }
+    ],
+    "items": [
+        {
+            "id": Number,
+            "value": String
+        }
+    ],
+    "relations": [
+        {
+            "idSection": Number,
+            "idChapter": Number,
+            "idItem": Number,
+        }
+    ]
+}
+
+// GET /api/tradecategoryfilter
+{
+    "tradeCategories": [
+        {
+            "id": Number,
+            "value": String
+        }
+    ]
+}
+
+// GET /api/tradetypefilter
+{
+    "tradeTypes": [
+        {
+            "id": Number,
+            "value": String
+        }
+    ]
+}
+
+// GET /api/yearfilter
+{
+    "years": [
+        {
+            "id": Number,
+            "value": String
+        }
+    ]
+}

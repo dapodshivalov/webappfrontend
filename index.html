@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trade Map</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script> -->
+
+
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+        <!-- Include the plugin's CSS and JS: -->
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <!--Plugin CSS file with desired skin-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
+        
+        <!--Plugin JavaScript file-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+        
+
+
+        <!-- My files -->
+        <script type="text/javascript" charset="utf8" src="scripts/main.js"></script>
+        <script type="text/javascript" charset="utf8" src="scripts/filter.js"></script>
+        <!-- <script type="text/javascript" charset="utf8" src="scripts/checkBoxes.js"></script> -->
+        <script type="text/javascript" charset="utf8" src="scripts/graphs.js"></script>
+        <script type="text/javascript" charset="utf8" src="scripts/filters/CountryFilterController.js"></script>
+        <script type="text/javascript" charset="utf8" src="scripts/filters/ItemFilterController.js"></script>
+        <script type="text/javascript" charset="utf8" src="scripts/filters/TradeCategoryFilterController.js"></script>
+        <script type="text/javascript" charset="utf8" src="scripts/filters/TradeTypeFilterController.js"></script>
+        <script type="text/javascript" charset="utf8" src="scripts/filters/YearFilterController.js"></script>
+        <script type="text/javascript" charset="utf8" src="scripts/filters/YearsRangeFilterController.js"></script>
+        <script type="text/javascript" charset="utf8" src="scripts/draw/YearsRangeDrawController.js"></script>
+        <script type="text/javascript" charset="utf8" src="scripts/filters/CurrencyFilterController.js"></script>
+        <script type="text/javascript" charset="utf8" src="scripts/filters/AllFilterController.js"></script>
+        <script type="text/javascript" charset="utf8" src="scripts/draw/CountryDrawController.js"></script>
+        <script type="text/javascript" charset="utf8" src="scripts/bootstrap-multiselect.js"></script>
+        <!-- <script src="mainchartjs.js"></script> -->
+        <!-- <link rel="stylesheet" href="style.css"> -->
+        <!-- <link rel="stylesheet" href="table.css"> -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- <link rel="stylesheet" href="css/checkbox.css"> -->
+        <!-- <link rel="stylesheet" href="css/applybutton.css"> -->
+        <link rel="stylesheet" href="css/bootstrap-multiselect.css">
+        <!-- <link rel="stylesheet" href="css/table.css"> -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+
+
+    </head>
+    <body>
+
+        <div class="mysidebar">
+          <div class="filter">
+            <div class="filter-header">
+              FILTERS
+            </div>
+          </div>
+
+
+          <div class="filter">
+            <select id="currencyFilter" ></select>
+          </div>
+
+          <div class="filter">
+            <select id="continentFilter" multiple="multiple" ></select>
+          </div>
+
+          <div class="filter">
+            <select id="regionFilter" multiple="multiple"></select>
+          </div>
+
+          <div class="filter">
+            <select id="countryFilter" multiple="multiple"></select>
+          </div>
+
+          <div class="filter">
+            <select id="sectionFilter" multiple="multiple" ></select>
+          </div>
+
+          <div class="filter">
+            <select id="chapterFilter" multiple="multiple"></select>
+          </div>
+          <div class="filter">
+            <select id="tradeCategoryFilter" multiple="multiple" ></select>
+          </div>
+
+          <div class="filter">
+            <select id="tradeTypeFilter" multiple="multiple"></select>
+          </div>
+
+          <div class="filter">
+            <button type="button" class="btn btn-success applyButtonDiv">Apply</button>
+          </div>
+        </div>
+
+        <div class="mycontainer">
+            <div class="myposts">
+
+              <div class="myheader">
+                
+                <div>Choose a trading year</div>
+                <div class="filter">
+                  <select id="yearFilter" ></select>
+                </div>                
+              </div>
+                
+              <div class="mypost mybig-post">
+                <div class="myptitle">MAP</div>
+                
+                <div class="mypplot country d-none" id="mapcountry"></div>
+                <div class="myspinner d-flex justify-content-center align-items-center">
+                  <div class="countrySpinner spinner-border text-primary d-none" role="status">
+                    <span class="sr-only">Загрузка...</span>
+                  </div>
+                </div>
+              </div>  
+
+              <div class="mypost mybig-post">
+                <div class="myptitle">
+                  <div>
+                  Top Counties By Value
+                  </div>
+                  <div class="count">
+                    <input id="countFilter" type="number" value="5" min="1" max="300" step="1" height="20px">
+                  </div>
+                </div>
+                <div class="mypplot country d-none" id="topcountries"  style="overflow-y:scroll"></div>
+                <div class="myspinner d-flex justify-content-center align-items-center">
+                  <div class="countrySpinner spinner-border text-primary d-none" role="status">
+                    <span class="sr-only">Загрузка...</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="myheader">
+                <div>Choose a trading period:</div>
+                <div class="yearsSlider">
+                  <input id="yearSlider">
+                </div>
+              </div>
+              <div class="mypost" >
+                <div class="myptitle">Trading Value By Year</div>
+                
+                <div class="mypplot years d-none" id="valueByYear"></div>
+                <div class="myspinner d-flex justify-content-center align-items-center">
+                  <div class="yearsSpinner spinner-border text-primary d-none" role="status">
+                    <span class="sr-only">Загрузка...</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mypost">
+                <div class="myptitle">Growth Rate By Year</div>
+                <div class="mypplot years d-none" id="growthRateByYears"></div>
+                <div class="myspinner d-flex justify-content-center align-items-center">
+                  <div class="yearsSpinner spinner-border text-primary d-none" role="status">
+                    <span class="sr-only">Загрузка...</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mypost">
+                <div class="myptitle">Trade Balance By Years</div>
+                <div class="mypplot years d-none" id="balance"> </div>
+                <div class="myspinner d-flex justify-content-center align-items-center">
+                  <div class="yearsSpinner spinner-border text-primary d-none" role="status">
+                    <span class="sr-only">Загрузка...</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+        
+    </body>
+</html>
